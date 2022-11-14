@@ -22,6 +22,9 @@
     elseif($getvalue == 'register'){
       include 'page/register.php';
     }
+    elseif($getvalue == 'logout'){
+      include 'function/logout_processing.php';
+    }
   } 
 ?>
 

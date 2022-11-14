@@ -62,9 +62,17 @@
                 </li>
               </ul>
             </li>
+            <?php if (!isset($_SESSION['username'])) { ?>
             <li class="nav-item">
               <a class="nav-link" href="http://localhost/trieu.com/index.php?page=login">Login</a>
             </li>
+
+            <?php } else { ?>
+              <li class="nav-item">
+              <a class="nav-link" href="http://localhost/trieu.com/index.php?page=logout">Log Out</a>
+            </li>
+            <?php } ?>
+            
             <li class="nav-item">
               <a
                 class="nav-link"
