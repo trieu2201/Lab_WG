@@ -10,13 +10,15 @@
             setcookie('password', $password, time()+60*60*24*10, "/");
         }
         if(!empty($username) && !empty($password)){
-            $sqlLogin = "SELECT * FROM users WHERE email = '$username' && password = '$password'";
+            $sqlLogin = "SELECT * FROM users WHERE usernames = '$username' && password = '$password'";
             $qry = mysqli_query($conn, $sqlLogin) or die("Login problem");
             $count = mysqli_num_rows($qry);
             if($count == 1){
                 session_start();
-                $_SESSION['username'] = $username;
-                $_SESSION['user'] = $username;
+                while($row = mysqli_fetch_assoc($qry)){
+                    $_SESSION['usernames'] = $row['usernames'];
+                    $_SESSION['userlevel'] = $row['userlevel'];
+                }
                 header("Location: ../index.php");
             }
             else{

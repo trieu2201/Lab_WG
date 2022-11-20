@@ -54,15 +54,15 @@
               Products
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="http://localhost/trieu.com/index.php?page=product/chuot">Chuột</a></li>
-                <li><a class="dropdown-item" href="http://localhost/trieu.com/index.php?page=product/tainghe">Tai nghe</a></li>
+                <li><a class="dropdown-item" href="http://localhost/trieu.com/index.php?page=product/chuot">Mouse</a></li>
+                <li><a class="dropdown-item" href="http://localhost/trieu.com/index.php?page=product/tainghe">Headphone</a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" href="http://localhost/trieu.com/index.php?page=product">All Products</a>
                 </li>
               </ul>
             </li>
-            <?php if (!isset($_SESSION['username'])) { ?>
+            <?php if (!isset($_SESSION['usernames'])) { ?>
             <li class="nav-item">
               <a class="nav-link" href="http://localhost/trieu.com/index.php?page=login">Login</a>
             </li>
@@ -81,14 +81,15 @@
               >
             </li>
           </ul>
-          <form class="d-flex">
+          <form action="function/search.php" method="post" class="d-flex">
             <input
               class="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
+              name="search-name"
             />
-            <button class="btn btn-outline-success" type="submit">
+            <button class="btn btn-outline-success" name="search-submit" type="submit">
               Search
             </button>
           </form>

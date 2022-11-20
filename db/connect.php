@@ -2,7 +2,7 @@
     $host = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "login-trieu.com";
+    $dbname = "trieu_db";
 
     $conn = new mysqli($host, $username, $password, $dbname);
 

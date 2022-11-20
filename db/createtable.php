@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "username";
-$password = "password";
-$dbname = "trieu.com";
+$username = "root";
+$password = "";
+$dbname = "trieu_db";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -13,18 +13,24 @@ if (!$conn) {
 
 // sql to create table
 $sql = "CREATE TABLE IF NOT EXISTS products (
-pid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-productname VARCHAR(30) NOT NULL,
-price VARCHAR(30) NOT NULL,
-email VARCHAR(50),
-reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  pid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  productname VARCHAR(100) NOT NULL,
+  price VARCHAR(30) NOT NULL,
+  manufacturers VARCHAR(30) NOT NULL,
+  color VARCHAR(30) NOT NULL
 )";
 
-if (mysqli_query($conn, $sql)) {
-  echo "Table MyGuests created successfully";
-} else {
-  echo "Error creating table: " . mysqli_error($conn);
-}
+// sql to create table
+$sql1 = "CREATE TABLE IF NOT EXISTS users (
+  pid INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  usernames VARCHAR(30) NOT NULL,
+  password VARCHAR(30) NOT NULL,
+  fullname VARCHAR(30) NOT NULL,
+  userlevel VARCHAR(30) NOT NULL
+)";
+
+$conn->query($sql);
+$conn->query($sql1);
 
 mysqli_close($conn);
 ?>

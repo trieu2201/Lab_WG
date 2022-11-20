@@ -5,7 +5,7 @@ if(isset($_POST['reg-submit'])){
     $reg_username = $_POST['reg-username'];
     $reg_password = $_POST['reg-password'];
     if(!empty($reg_fullname) && !empty($reg_username) && !empty($reg_password)){
-        $sql = "INSERT INTO `users` (`fullname`, `email`, `password`) VALUES ('$reg_fullname', '$reg_username', '$reg_password')";
+        $sql = "INSERT INTO `users` (`usernames`, `password`, `fullname`) VALUES ('$reg_username', '$reg_password', '$reg_fullname')";
 
         if($conn->query($sql) == TRUE){
             echo "Insert Succesfull";
@@ -21,5 +21,3 @@ if(isset($_POST['reg-submit'])){
     }
 }
 ?>
-
-<a href="index.php">Turn Back</a>
