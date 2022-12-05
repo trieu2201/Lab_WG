@@ -8,7 +8,6 @@
   include 'db/createtable.php';
 ?>
 
-
 <?php
   if(isset($_GET['page'])){
     $getvalue = $_GET['page'];

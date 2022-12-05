@@ -13,6 +13,7 @@
     />
     <link rel="stylesheet" href="css/style.css"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
     <script src="index.js"></script>
 </head>
@@ -66,13 +67,6 @@
             <li class="nav-item">
               <a class="nav-link" href="http://localhost/trieu.com/index.php?page=login">Login</a>
             </li>
-
-            <?php } else { ?>
-              <li class="nav-item">
-              <a class="nav-link" href="http://localhost/trieu.com/index.php?page=logout">Log Out</a>
-            </li>
-            <?php } ?>
-            
             <li class="nav-item">
               <a
                 class="nav-link"
@@ -80,6 +74,13 @@
                 >Register</a
               >
             </li>
+
+            <?php } else { ?>
+              <li class="nav-item">
+              <a class="nav-link" href="http://localhost/trieu.com/index.php?page=logout">Log Out</a>
+            </li>
+            <?php } ?>
+            
           </ul>
           <form action="function/search.php" method="post" class="d-flex">
             <input
